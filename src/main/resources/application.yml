@@ -1,2 +1,10 @@
 server:
   port: 8087
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/mybatis
+    username: root
+    password: 123456
+#mybatis:
+#  设置mapper.xml的位置
+#  mapper-locations: classpath*:sql_mapper/**/*.xml
