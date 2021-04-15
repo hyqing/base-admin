@@ -1,14 +1,19 @@
 package com.hyq.baseadmin.bean;
 
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableName;
+
 /**
  * Created by hyq on 2021/4/13 21:43.
  */
+@TableName("user")
 public class UserBean {
     private Integer id;
     private String name;
     private String email;
     private Integer age;
     private Integer sex;
+    @TableField("schoolName")
     private String schoolName;
 
     public Integer getId() {

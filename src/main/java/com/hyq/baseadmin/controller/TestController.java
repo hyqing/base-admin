@@ -2,6 +2,7 @@ package com.hyq.baseadmin.controller;
 
 import com.hyq.baseadmin.bean.UserBean;
 import com.hyq.baseadmin.mapper.UserMapper;
+import com.hyq.baseadmin.mapper.plus.UserBeanMapper;
 import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,14 +16,17 @@ import java.util.List;
  */
 @RestController
 public class TestController {
-@Resource
-private UserMapper userMapper;
+    @Resource
+    private UserMapper userMapper;
+    @Resource
+    private UserBeanMapper userBeanMapper;
 
     @RequestMapping("/hello")
     public String index() {
-        UserBean userBeanParam=new UserBean();
+        UserBean userBeanParam = new UserBean();
         userBeanParam.setSchoolName("Sunny School");
-        List<UserBean> userBeanList=userMapper.queryUserBySchoolName(userBeanParam);
+//        List<UserBean> userBeanList = userMapper.queryUserBySchoolName(userBeanParam);
+        List<UserBean> userBeanList = userBeanMapper.selectList(null);
         return "Hello world";
     }
 }

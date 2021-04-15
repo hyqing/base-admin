@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan({"com.hyq.baseadmin.mapper"})
+//@MapperScan({"com.hyq.baseadmin.mapper"})
 public class BaseAdminApplication {
 
     public static void main(String[] args) {
