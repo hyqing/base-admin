@@ -9,12 +9,10 @@ import com.baomidou.mybatisplus.annotation.TableName;
 @TableName("user")
 public class UserBean {
     private Integer id;
-    private String name;
-    private String email;
-    private Integer age;
-    private Integer sex;
-    @TableField("schoolName")
-    private String schoolName;
+    private String account;
+    private String password;
+    @TableField("roleId")
+    private Integer roleId;
 
     public Integer getId() {
         return id;
@@ -24,43 +22,27 @@ public class UserBean {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getAccount() {
+        return account;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAccount(String account) {
+        this.account = account;
     }
 
-    public String getEmail() {
-        return email;
+    public String getPassword() {
+        return password;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public Integer getAge() {
-        return age;
+    public Integer getRoleId() {
+        return roleId;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    public Integer getSex() {
-        return sex;
-    }
-
-    public void setSex(Integer sex) {
-        this.sex = sex;
-    }
-
-    public String getSchoolName() {
-        return schoolName;
-    }
-
-    public void setSchoolName(String schoolName) {
-        this.schoolName = schoolName;
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
     }
 }

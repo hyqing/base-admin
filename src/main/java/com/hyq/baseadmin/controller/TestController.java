@@ -24,7 +24,6 @@ public class TestController {
     @RequestMapping("/hello")
     public String index() {
         UserBean userBeanParam = new UserBean();
-        userBeanParam.setSchoolName("Sunny School");
 //        List<UserBean> userBeanList = userMapper.queryUserBySchoolName(userBeanParam);
         List<UserBean> userBeanList = userBeanMapper.selectList(null);
         return "Hello world";
