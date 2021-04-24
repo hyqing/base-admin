@@ -1,7 +1,6 @@
 package com.hyq.baseadmin.config;
 
 import com.hyq.baseadmin.interceptor.AuthenticationInterceptor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -17,7 +16,8 @@ public class InterceptorConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(authenticationInterceptor())
                 .addPathPatterns("/**") //拦截所有请求
-                .excludePathPatterns("/auth/**"); //排除掉auth打头的路径
+                .excludePathPatterns("/auth/**")//排除掉auth打头的路径
+                .excludePathPatterns("/hello/**"); //排除掉auth打头的路径
     }
 
     @Bean

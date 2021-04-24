@@ -16,22 +16,22 @@ import javax.servlet.http.HttpServletResponse;
 public class AuthenticationInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object object) throws Exception {
-        String token = httpServletRequest.getHeader("token");// 从 http 请求头中取出 token
-        // 如果不是映射到方法直接通过
-        if (!(object instanceof HandlerMethod)) {
-            return true;
-        }
-
-        if (token == null) {
-            throw new RuntimeException("无token，请重新登录");
-        }
-        // 验证 token
-        JWTVerifier jwtVerifier = JWT.require(Algorithm.HMAC256("123456")).build();
-        try {
-            jwtVerifier.verify(token);
-        } catch (JWTVerificationException e) {
-            throw new RuntimeException("401");
-        }
+//        String token = httpServletRequest.getHeader("token");// 从 http 请求头中取出 token
+//        // 如果不是映射到方法直接通过
+//        if (!(object instanceof HandlerMethod)) {
+//            return true;
+//        }
+//
+//        if (token == null) {
+//            throw new RuntimeException("无token，请重新登录");
+//        }
+//        // 验证 token
+//        JWTVerifier jwtVerifier = JWT.require(Algorithm.HMAC256("123456")).build();
+//        try {
+//            jwtVerifier.verify(token);
+//        } catch (JWTVerificationException e) {
+//            throw new RuntimeException("401");
+//        }
         return true;
 
 

@@ -29,8 +29,10 @@ public class AuthenticationController {
     }
 
     @RequestMapping(value = "/login")
-    public String login(HttpServletRequest request, HttpServletResponse response) {
-//        return "redirect:http://localhost:3000";
-        return "redirect:http://baidu.com";
+    public String login() {
+        System.out.println("qqq");
+//        return "redirect:http://localhost:3000/about";
+//        return "aaa";
+        return "redirect:http://www.baidu.com/";
     }
 }
